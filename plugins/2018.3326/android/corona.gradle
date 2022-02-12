@@ -1,0 +1,8 @@
+repositories {
+	jcenter()
+	mavenCentral()
+	maven { url "https://sdk.tapjoy.com" }
+}
+dependencies {
+		 implementation 'com.applovin.mediation:tapjoy-adapter:12.9.0.2'
+}
