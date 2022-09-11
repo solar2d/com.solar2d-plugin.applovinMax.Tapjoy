@@ -438,6 +438,13 @@ public:
      * @param remoteMessage: The message(jobject) received from Firebase
      */
     static void setReceiveRemoteNotification(jobject context,jobject remoteMessage);
+    
+    /**
+     * @brief This is to opt out passing advertising_id param in the subsequent network requests
+     * @param context: The Application context (jobject)
+     * @param optOut: Set to true to opt out advertising_id in the subsequent requests, false to disable
+     */
+    static void optOutAdvertisingID(jobject context, bool optOut);
 #endif
     
     /**

@@ -375,7 +375,7 @@ typedef void (^networkCompletion)(BOOL success, NSError * _Nullable error);
  *
  * @param theUserID The user ID you wish to assign to this device.
  */
-+ (void)setUserID:(nullable NSString*)theUserID;
++ (void)setUserID:(nullable NSString*)theUserID TJC_DEPRECATION_WARNING(12.10.0);
 /**
  * Assigns a user ID for this user/device. This is used to identify the user in your application
  *
