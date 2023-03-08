@@ -145,8 +145,9 @@ public:
      *        The default is 1.0
      *
      * @param multiplier
+     *        The multiplier for the virtual currency display.
      */
-    static void setCurrencyMultiplier(float multiplier);
+    CA_DEPRECATED static void setCurrencyMultiplier(float multiplier);
     
     /**
      * @deprecated Deprecated since version 11.4.0
@@ -154,7 +155,7 @@ public:
      *
      * @return Currency multiplier.
      */
-    static float getCurrencyMultiplier();
+    CA_DEPRECATED static float getCurrencyMultiplier();
     
     /**
      * @brief Tracks a purchase
@@ -289,7 +290,7 @@ public:
      * @param customParam
      *         The custom parameter to assign to this device
      */
-    static void setCustomParameter(const char* referrer);
+    static void setCustomParameter(const char* customParam);
     
     /**
      * @brief Returns the currently set custom parameter.
@@ -381,7 +382,7 @@ public:
      * @param gdprApplicable
      *        true if GDPR applies to this user, false otherwise
      */
-    static void subjectToGDPR(bool gdprApplicable);
+    CA_DEPRECATED static void subjectToGDPR(bool gdprApplicable);
     
     /**
      * @deprecated Deprecated since version 12.6.0
@@ -390,7 +391,7 @@ public:
      * @param value
      *        The user consent string
      */
-    static void setUserConsent(const char* value);
+    CA_DEPRECATED static void setUserConsent(const char* value);
     
     /**
      * @deprecated Deprecated since version 12.6.0
@@ -405,7 +406,7 @@ public:
      *
      * @param isBelowConsentAge True if below consent age (COPPA) applies to this user, false otherwise
      */
-    static void belowConsentAge(bool isBelowConsentAge);
+    CA_DEPRECATED static void belowConsentAge(bool isBelowConsentAge);
     
 #if defined(ANDROID)
     /**
@@ -570,13 +571,11 @@ public:
     static void setSubjectToGDPR(TJPrivacyPolicyHandle handle, bool gdprApplicable);
     
     /**
-     * @brief Assigns a user ID for this user/device. This is used to identify the user
-     *        in your application.
-     *
-     *        This is REQUIRED for NON-MANAGED currency apps.
-     *
-     * @param userID
-     *        user ID you wish to assign to this device
+     * @brief This is used for sending User's consent to behavioral advertising such as in the context of GDPR
+     * The consent value can be "0" (User has not provided consent), "1" (User has provided consent) or
+     * a daisybit string as suggested in IAB's Transparency and Consent Framework
+     *        
+     *@param consent "0" (User has not provided consent), "1" (User has provided consent) or a daisybit string as suggested in IAB's Transparency and Consent Framework
      */
     static void setUserConsent(TJPrivacyPolicyHandle handle, const char* consent);
     

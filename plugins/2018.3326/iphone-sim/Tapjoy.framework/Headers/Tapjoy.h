@@ -70,7 +70,6 @@ typedef void (^networkCompletion)(BOOL success, NSError * _Nullable error);
 @property (nullable, nonatomic, strong) TJCUtil *util;
 @property (nullable, nonatomic, strong) TJCLog *log;
 
-
 /**
  * This method is called to initialize the Tapjoy system and notify the server that this device is running your application.
  *
@@ -588,7 +587,8 @@ typedef void (^networkCompletion)(BOOL success, NSError * _Nullable error);
 
 @protocol TJCTopViewControllerProtocol <NSObject>
 @required
-@property (nonatomic, assign) BOOL canRotate;
+@property (nonatomic, assign) UIInterfaceOrientation lockedOrientation;
+@property (assign, nonatomic) BOOL canRotate;
 @end
 
 #endif
